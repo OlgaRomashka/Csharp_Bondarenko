@@ -13,8 +13,60 @@ namespace Lesson_01
             //CalculateAreaSquare();
             // CalculateAreaCircle();
             //CalculateTwoNumbers();
-
+            //PictureA();
+            //PictureB();
+            PictureC();
         }
+
+        static void PictureC()
+        {
+            var count = 12;
+
+            for (var y = count; y > 0; y--)
+            {
+               
+                for (var x = 0; x <= count; x++)
+                {
+                    if (x < y)
+                    {
+                        Console.Write("  ");
+                    }
+                    else
+                    {
+                        Console.Write("+ ");
+                    }
+                   
+                }
+               
+                Console.WriteLine();
+            }
+        }
+
+        static void PictureB()
+        {
+            for (var y = 0; y < 10; y++)
+            {
+                for (var x = 0; x <= y; x++)
+                {
+                    Console.Write("#  ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+         static void PictureA()
+        {
+            for (var y = 10; y > 0; y--)
+            {
+                for (var x = 0; x < y; x++)
+                {
+                    Console.Write("#  ");
+                }
+                Console.WriteLine();
+            }
+        
+        }
+
 
         static void CalculateTwoNumbers()
         {
