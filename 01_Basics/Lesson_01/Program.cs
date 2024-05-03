@@ -20,12 +20,10 @@ namespace Lesson_01
 
         static void PictureC()
         {
-            var count = 12;
-
-            for (var y = count; y > 0; y--)
+            for (var y = 10; y > 0; y--)
             {
                
-                for (var x = 0; x <= count; x++)
+                for (var x = 0; x <= 10; x++)
                 {
                     if (x < y)
                     {
