@@ -11,53 +11,130 @@ namespace Lesson_02
             //TwoNumber();
             //Calculator();
             //Fibonacci();
-            Shop();
-
-
+            //Shop();
+            MoveSguare();
+            //Console.Clear();
+            //Console.SetCursorPosition(10,5);
+            //Console.Write("# ");
         }
 
-        static void Shop()
-        {
 
-            double summaProduct = AskForInput("ВВести общую стоимость: ");
+        static void MoveSguare()
+        {
+            int posX = 0;
+            int posY = 0;
+            var isStop = false;
+
+
+            while (true)
+            {
+
+                Console.Clear();
+                Draw(posX, posY, "# ");
+
+                var key = Console.ReadKey().Key;
+
+                switch (key){
+                    case ConsoleKey.LeftArrow:
+                        if (posX > 0) posX--;
+                            break;
+                        
+                    case ConsoleKey.RightArrow:
+                            posX++;
+                            break; 
+                        
+                    case ConsoleKey.UpArrow:
+                        if (posY > 0) posY--;
+                        break;
+                        
+                    case ConsoleKey.DownArrow:
+                        posY++;
+                            break;
+                        
+                    case ConsoleKey.Spacebar:
+                            isStop = true;
+                            break;
+                        
+                    default:
+                            break;
+                        
+                }
+
+
+                if (isStop)
+                {
+                    break;
+                }
+
+            }
+    
+        }
+        static void Draw(int xPos, int yPos, string s)
+        {
+            for (var y = 0; y < 10; y++)
+            {
+                for(var x = 0; x < 10; x++)
+                {
+                    Console.SetCursorPosition(xPos + x * s.Length, yPos + y * 3);
+                    Console.Write(s);
+                }
+
+                Console.WriteLine();
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+//----------------------------------------------------------------------------
+        //static void Shop()
+        //{
+
+        //    double summaProduct = AskForInput("ВВести общую стоимость: ");
             
 
-            if (summaProduct <= 0)
-            {
-               Console.Write("Товар бесплатный");
-                return;
-            }
+        //    if (summaProduct <= 0)
+        //    {
+        //       Console.Write("Товар бесплатный");
+        //        return;
+        //    }
 
-            double differenceProduct = AskForInput("ВВести разницу в стоимости: ");
+        //    double differenceProduct = AskForInput("ВВести разницу в стоимости: ");
 
-            if (differenceProduct < 0 || differenceProduct > summaProduct)
-                   {
-                     Console.Write("Неверные данные");
-                     return;
-                   }
-            double costPhoduct1 = (summaProduct - differenceProduct) * 0.5;
-            double costPhoduct2 = costPhoduct1 + differenceProduct;
+        //    if (differenceProduct < 0 || differenceProduct > summaProduct)
+        //           {
+        //             Console.Write("Неверные данные");
+        //             return;
+        //           }
+        //    double costPhoduct1 = (summaProduct - differenceProduct) * 0.5;
+        //    double costPhoduct2 = costPhoduct1 + differenceProduct;
 
 
-            Console.WriteLine("Стоимость товара МЯЧ: " + costPhoduct1);
-            Console.Write("Стоимость товара БИТА: " + costPhoduct2);
-        }
+        //    Console.WriteLine("Стоимость товара МЯЧ: " + costPhoduct1);
+        //    Console.Write("Стоимость товара БИТА: " + costPhoduct2);
+        //}
 
-        static double AskForInput(string text)
-        {
-            string? input;
-            double result;
+        //static double AskForInput(string text)
+        //{
+        //    string? input;
+        //    double result;
 
-            do
-            {
-                Console.Write(text);
-                input = Console.ReadLine();
-            }
-            while (!double.TryParse(input, out result));
+        //    do
+        //    {
+        //        Console.Write(text);
+        //        input = Console.ReadLine();
+        //    }
+        //    while (!double.TryParse(input, out result));
 
-            return result;
-        }
-
+        //    return result;
+        //}
+//-------------------------------------------------------------------------
 
         //static void Fibonacci()
         //{
@@ -89,7 +166,7 @@ namespace Lesson_02
         //    }
 
         //} 
-
+//-------------------------------------------------------------------------
         //static void Calculator()
         //{
         //    double result1;
@@ -149,9 +226,7 @@ namespace Lesson_02
         //            break;
 
         //    }
-
-
-
+//-----------------------------------------------------------------------------
         //static void TwoNumber()
         //{
         //    int result1;
@@ -191,9 +266,6 @@ namespace Lesson_02
         //    Console.Write(text);
 
         //}
-
-
-
     }
 }
 
