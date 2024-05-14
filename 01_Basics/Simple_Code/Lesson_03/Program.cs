@@ -15,7 +15,7 @@ namespace Lesson_03
             // Factorial_1();
             //Factorial_2();
             //CounterSpaces();
-           // PositiveNegativeNumbers();
+            PositiveNegativeNumbers();
 
 
         }
@@ -25,19 +25,50 @@ namespace Lesson_03
 
             int number = InputNumber();
 
+            if (number == 0)
+            {
+                Console.Write (" число равно 0 ");
+            }
+            else
+            {
+                int result = ((number >> 31) & 1);
+
+                bool isNegative = Convert.ToBoolean(result);
+
+                Console.Write(isNegative + " -> ");
+
+                if (isNegative)
+                {
+                    Console.Write(number + " - число отрицательное");
+                }
+                else
+                {
+                    Console.Write(number + " - число положительное");
+                }
+
+                if(Console.ReadKey().Key== ConsoleKey.Enter)
+                {
+                    PositiveNegativeNumbers();
+                }
+            }
+                
+            
+
             static int InputNumber()
             {
                 Console.Write(("Введите целое число отличное от 0: "));
                 string input = Console.ReadLine();
 
                 int number;
+   
 
                 while (!int.TryParse(input, out number))
                     {
                     input = Console.ReadLine();
                     }
-
+                
                 return number;
+               
             }
 
             
