@@ -225,16 +225,19 @@ namespace Lesson_02
                 {
                     case 0:
                         Console.WriteLine("Division by zero");
-                        return;
+                        break;
+                default:
+                    var result = result1 % result2;
+
+                    var text = (result == 0)
+                      ? "Без остатка: " + result1 + " и " + result2
+                      : "Остаток: " + result;
+
+                    Console.Write(text);
+                    break;
                 }
 
-            var result = result1 % result2;
-
-            var text = (result == 0)
-              ? "Без остатка: " + result1 + " и " + result2
-              : "Остаток: " + result;
-
-            Console.Write(text);
+           
 
         }
     }
