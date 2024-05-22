@@ -55,6 +55,8 @@ namespace Lesson_04
             }
         }
     }
+
+
     public enum Color
     {
         Black,
