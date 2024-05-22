@@ -36,6 +36,9 @@ namespace Lesson_04_02
             GenreBook = genreBook;
             NumberPages = numberPages; 
         }
+
+
+
         public enum Genre
         {
             Detective,
