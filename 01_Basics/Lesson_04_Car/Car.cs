@@ -8,6 +8,7 @@ namespace L04_Cars
         private int _year;
         private float _price;
         private Color _color;
+
         public Car(string marka, int year, float price, Color color)
         {
             _marka = marka;
@@ -15,13 +16,15 @@ namespace L04_Cars
             _price = price;
             _color = color;
         }
+
         public void ChangePrice(float newPrice)
         {
             _price = newPrice;
         }
+
         public string GetInfo()
         {
-             return  "Mapка: " + _marka + ", Год: " + _year + ", Цвет: " + _color + ", Цена: " + _price;
+            return "Mapка: " + _marka + ", Год: " + _year + ", Цвет: " + _color + ", Цена: " + _price;
         }
     }
 }

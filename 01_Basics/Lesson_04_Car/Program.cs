@@ -20,10 +20,11 @@
             PrintCar(car2);
             PrintCar(car3);
         }
+
         private static void PrintCar(Car a)
         {
             string s = a.GetInfo();
             Console.WriteLine(s);
-        }    
+        }
     }
 }
