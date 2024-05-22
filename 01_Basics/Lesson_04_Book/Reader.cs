@@ -6,6 +6,7 @@ namespace L04_Books
     {
         private string? _rememberNameBook;
         private string? _rememberAuthor;
+
         public void Read(Book book)
         {
             if (book.NumberPages > 1000 || book.GenreBook == Genre.Horror || book.isRead == true)
@@ -23,6 +24,7 @@ namespace L04_Books
                 book.isRead = true;
             }
         }
+
         public string? Message { get; private set; }
     }
 }
