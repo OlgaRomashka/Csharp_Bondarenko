@@ -1,4 +1,6 @@
-﻿namespace L_05
+﻿using System.Numerics;
+
+namespace L_05
 {
     internal class Program
     {
@@ -19,14 +21,11 @@
             var egg1 = penguin1.LayEgg();
 
             GetInfo(egg1);
-
-       
         }
 
-        static public void GetInfo(Birds bird)
+        static public void GetInfo(BirdsBase bird)
         {
-            string info = TellAboutBird(bird);
-            Console.WriteLine(info);
+            Console.WriteLine(TellAboutBird(bird));
         }
 
         static public void GetInfo(Egg egg)
@@ -34,7 +33,7 @@
             Console.WriteLine("Parent is:" + egg.Parent.Name);
         }
 
-        static string TellAboutBird(Birds bird)
+        static string TellAboutBird(BirdsBase bird)
         {
                 string s = bird.Name;
 

@@ -2,8 +2,11 @@
 
 namespace L_05
 {
-    public class Ostrich : Birds
-   {
+    public class Ostrich : BirdsBase
+    {
+        public Ostrich(string name) : base(name)
+        { }
+
         public override bool Walk()
         {
             return true;
@@ -23,8 +26,5 @@ namespace L_05
         {
             return false;
         }
-
-        public Ostrich(string name) : base(name)
-        { }
     }
 }

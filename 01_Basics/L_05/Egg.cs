@@ -4,10 +4,10 @@ namespace L_05
 {
     public class Egg
     {
-        public Egg(Birds bird)
+        public Egg(BirdsBase bird)
         {
             Parent = bird;
         }
-        public Birds Parent{get; private set; }
+        public BirdsBase Parent{get; }
     }
 }

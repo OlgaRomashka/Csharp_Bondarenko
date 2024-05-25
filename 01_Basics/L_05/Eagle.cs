@@ -2,8 +2,11 @@
 
 namespace L_05
 {
-    public class Eagle: Birds
+    public class Eagle: BirdsBase
     {
+        public Eagle(string name) : base(name)
+        { }
+
         public override bool Fly()
         {
             return true;
@@ -23,8 +26,5 @@ namespace L_05
         {
             return false;
         }
-
-        public Eagle(string name) : base(name)
-        { }
     }
 }

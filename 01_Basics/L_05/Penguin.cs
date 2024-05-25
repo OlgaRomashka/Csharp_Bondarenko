@@ -2,8 +2,11 @@
 
 namespace L_05
 {
-    public class Penguin : Birds
+    public class Penguin : BirdsBase
     {
+        public Penguin(string name) : base(name)
+        { }
+
         public override bool Swim()
         {
             return true;
@@ -23,9 +26,6 @@ namespace L_05
         {
             return false;
         }
-
-        public Penguin(string name) : base(name)
-        { }
     }
 }
 
