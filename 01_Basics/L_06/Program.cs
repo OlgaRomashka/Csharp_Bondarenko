@@ -16,9 +16,7 @@
             var l = string.Join(",", mas);
 
             Console.WriteLine(l);
-
-            //T[] FindAll<T> (T[] array, Predicate<T> match) 
-
+  
             var evenNumbers = Array.FindAll(mas, x => x % 2 == 0);
 
             var evens = string.Join(", ", evenNumbers);
