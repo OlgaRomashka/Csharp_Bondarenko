@@ -12,10 +12,10 @@ namespace L_10
 
             switch (index)
             {
-                case 0: throw new IndexOutOfRangeException();
+                case 0: throw new NullReferenceException();
                 case 1: throw new DivideByZeroException();
                 case 2: throw new InvalidCastException();
-                default: throw new NullReferenceException();
+                default: throw new IndexOutOfRangeException();
             }
         }
     }
