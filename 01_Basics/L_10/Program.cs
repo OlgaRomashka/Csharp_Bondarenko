@@ -4,22 +4,15 @@
     {
         static void Main(string[] args)
         {
-           var thrower = new ExceptionThrower();
+            var myClass = new MyClass();
 
             try
             {
-                thrower.Throw();
+                myClass.Execute();
             }
-            catch (Exception ex)
+            catch (MyCustomException customEx)
             {
-                try
-                {
-                    throw new MyCustomException(ex);
-                }
-                catch
-                { 
-                    Console.WriteLine("My costom exeption!!!");
-                }
+                Console.WriteLine($"CATCHED:: {customEx.Message}");
             }
         } 
     }
