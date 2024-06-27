@@ -8,10 +8,12 @@
 
             var client = new Client();
 
-            server.OnChestGenerated += client.Print;
+            server.OnChestGenerated += client.Output;
            
 
             server.GenerateChests(4);
+
+
         }
     }
 }

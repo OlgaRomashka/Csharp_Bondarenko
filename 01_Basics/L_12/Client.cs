@@ -4,30 +4,23 @@ namespace L_12
 {
     public class Client
     {
-        //public void СameErrorChest(List<Chest> chests)
-        //{
-        //    if (chests == null)
-        //    {
-        //        Console.WriteLine("Ошибка 1 : ссылка на список равна null");
-        //    }
+        public void Output(List<Chest> chests)
+        {
+            var sorted = SortChest(chests);
 
-        //    if (chests.Count == 0)
-        //    {
-        //        Console.WriteLine("Ошибка 2 : список сундуков пуст");
-        //    } 
-        //}
+           Print(sorted);
+        }
 
-        //public void SortChest(List<Chest> chests)
-        //{
-        //    List<Chest> OnChestGenerated
+        private List<Chest> SortChest(List<Chest> chests)
+        {
+            return chests
+             .OrderByDescending(c => c.Credits)
+             .ThenByDescending(c => c.CollectionCount)
+             .ThenByDescending(c => c.BasketCount)
+             .ToList();
+        }
 
-
-        //  var result = List.OrderBy(x=>x.credits). ThenBy(x=>x.collections);
-        //}
-
-        
-
-        public void Print(List<Chest> chests)
+        private void Print(List<Chest> chests)
         {
             Log.Message($"*-------------------------------");
 
@@ -36,9 +29,13 @@ namespace L_12
                 Log.Message(chest.ToString());
             }
 
+            Log.Message($"Всего:");
+            Log.Message($"  - сундуков: {chests.Count}");
+            Log.Message($"  - корзин:{chests.Select(x=>x.BasketCount).Sum()}");
+            Log.Message($"  - коллекшенов: {chests.Select(x => x.CollectionCount).Sum()}");
+            Log.Message($"  - кредитов: {chests.Select(x=>x.Credits).Sum()}");
+
             Log.Message($"*-------------------------------");
-
         }
-
     }
 }
