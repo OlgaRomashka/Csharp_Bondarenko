@@ -2,7 +2,7 @@ namespace Test.Task_01;
 
 public class Task01
 {
-    private static Random _random = new();
+   
 
     public static void Execute()
     {
@@ -52,13 +52,15 @@ public class Task01
 
     private static int[,] GetTwoDimensionalArray(int xSize, int ySize)
     {
+        Random rnd = new();
+        
         var arr = new int[xSize, ySize];
 
         for (var y = 0; y < ySize; y++)
         {
             for (var x = 0; x < xSize; x++)
             {
-                arr[x, y] = _random.Next(2, 10);
+                arr[x, y] = rnd.Next(2, 10);
             }
         }
 
