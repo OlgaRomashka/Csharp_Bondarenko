@@ -17,12 +17,12 @@ public class Task04
         MyClass.OnTenthCalled += () =>
         {
             counter++;
-            Console.WriteLine($"CALL: {counter}");
+            Console.WriteLine($"10th CALL: {counter}");
         };
         
         var rnd = new Random();
 
-        for (var i = 0; i < 33; i++)
+        for (var i = 0; i < 77; i++)
         {
             var index = rnd.Next(0, classes.Length);
 

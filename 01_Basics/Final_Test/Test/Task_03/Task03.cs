@@ -6,18 +6,12 @@ public class Task03
     {
         int[] arr = [1, 2, 5, -2, -9, 25, 0, 1, -99];
         
-        var sorted = GetSorted(arr);
-
-        Console.WriteLine(string.Join(", ", sorted));
-    }
-
-    private static IEnumerable<int> GetSorted(IEnumerable<int> arr)
-    {
-        var enumerable = arr.ToArray();
-        
-        return enumerable.OrderBy(x => x)
-            .Skip((int)Math.Round(enumerable.Length * 0.5))
+        var sorted = arr
+            .OrderBy(x => x)
+            .Skip((int)Math.Round(arr.Length * 0.5))
             .OrderDescending()
             .Select(x => x * x);
+
+        Console.WriteLine(string.Join(", ", sorted));
     }
 }

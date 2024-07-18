@@ -2,7 +2,7 @@ namespace Test.Task_01;
 
 public class Task01
 {
-   
+    private static readonly Random Random = new();
 
     public static void Execute()
     {
@@ -20,9 +20,7 @@ public class Task01
     private static void Modify(int[,] arr)
     {
         var n = (float)arr.GetLength(0) / arr.GetLength(1);
-        
-        Console.WriteLine($"N: {n}");
-        
+
         for (var y = 0; y < arr.GetLength(1); y++)
         {
             for (var x = 0; x < arr.GetLength(0); x++)
@@ -52,15 +50,13 @@ public class Task01
 
     private static int[,] GetTwoDimensionalArray(int xSize, int ySize)
     {
-        Random rnd = new();
-        
         var arr = new int[xSize, ySize];
 
         for (var y = 0; y < ySize; y++)
         {
             for (var x = 0; x < xSize; x++)
             {
-                arr[x, y] = rnd.Next(2, 10);
+                arr[x, y] = Random.Next(2, 10);
             }
         }
 

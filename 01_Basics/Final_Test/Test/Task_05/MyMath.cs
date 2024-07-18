@@ -2,13 +2,13 @@ namespace Test.Task_05;
 
 public class MyMath
 {
-    public static double PowerOf(int number, int power)
+    public static double PowerOf(double number, int power)
     {
         if (power == 0) return 1;
 
-        double result = number;
+        var result = number;
 
-        int p = power > 0 ? power : -power;
+        var p = power > 0 ? power : -power;
 
         for (var i = 1; i < p; i++)
         {
@@ -18,15 +18,8 @@ public class MyMath
         return power > 0 ? result : 1 / result;
     }
 
-    public static int Fac(int number)
+    public static double Fac(int number)
     {
-        var fac = number;
-        
-        for (var i = 1; i < number; i++)
-        {
-            fac *= i;
-        }
-
-        return fac;
+        return number == 1 ? 1 : number * Fac(number - 1);
     }
 }
